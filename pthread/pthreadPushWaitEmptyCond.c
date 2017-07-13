@@ -31,7 +31,7 @@ void *inc_count(void *id)
 {
     long thread_id = (long)id;    
 
-    //while(1){
+    while(1){
         printf("%s::%d thread %ld, count: %d\n", __FUNCTION__, __LINE__, thread_id, count);
         pthread_mutex_lock(&count_mutex);
         while(0 != count){
@@ -43,7 +43,7 @@ void *inc_count(void *id)
         count += INC_RATE;
         printf("%s::%d thread %ld count: %d, increse count\n", __FUNCTION__, __LINE__, thread_id, count);
         pthread_mutex_unlock(&count_mutex);
-    //}
+    }
     printf("%s::%d thread %ld count: %d, going to exit thread\n", __FUNCTION__, __LINE__, thread_id, count);
     pthread_exit(NULL);
 }
@@ -52,7 +52,7 @@ void *dec_count(void *id)
 {
     long thread_id = (long)id;    
 
-    //while(1){
+    while(1){
         printf("%s::%d thread %ld, count: %d\n", __FUNCTION__, __LINE__, thread_id, count);
         pthread_mutex_lock(&count_mutex);
         while(0 != count){
@@ -65,7 +65,7 @@ void *dec_count(void *id)
             }
         }
         pthread_mutex_unlock(&count_mutex);
-    //}
+    }
     printf("%s::%d thread %ld count: %d, going to exit thread\n", __FUNCTION__, __LINE__, thread_id, count);
     pthread_exit(NULL);
 }
