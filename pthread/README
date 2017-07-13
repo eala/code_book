@@ -1,0 +1,4 @@
+1. pthread cond wait
+    other refs:
+        a. http://blog.csdn.net/hairetz/article/details/4535920
+        b. https://computing.llnl.gov/tutorials/pthreads/samples/condvar.c
